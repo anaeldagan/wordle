@@ -1,0 +1,231 @@
+body {
+    font: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: plum;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: center;
+    min-height: 100vh;
+    }
+    
+
+hr {
+    width: 500px;
+    text-align: center;
+}
+
+#title {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#board {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    display: flex;
+
+    justify-content: center; /* למרכז את האלמנטים בתוך הלוח */
+    align-items: center; /* למרכז את האלמנטים לאורך הציר האנכי */
+
+    flex-wrap: wrap;
+}
+.title {
+    /*box*/ 
+    border: 2px solid rgb(255, 255, 255);
+    width: 55px;
+    height: 55px;
+    margin: 2.5px;
+
+    /* text */
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.correct {
+    background-color: green !important;
+    color: white !important;
+}
+
+.present {
+    background-color: yellow !important;
+    color: black !important;
+}
+
+.absent {
+    background-color: grey !important;
+    color: white !important;
+}
+
+
+
+
+.container {
+    width: 850px;
+    background-color: white !important;
+    display: flex;
+    align-items: flex-end;
+    gap: 70px;
+    padding: 60px 40px;
+    border-radius: 10px;
+    margin: 2.5px;
+}
+
+.game-box .keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* הוספת רווח בין כפתור לכפתור */
+    justify-content: center;
+}
+
+:where(.game-modal, .keyboard) button {
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(211, 168, 221);
+}
+.keyboard button {
+    padding: 5px;
+    width: calc(20% - 15px); /* התאמה כך שהכפתורים יהיו תואמים לגודל הקוביות בלוח כולל הרווחים */
+    font-size: 1.5rem;
+    border-radius: 5px;
+    background-color: rgb(169, 165, 165);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    outline: none;
+}
+
+.keyboard button[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+:where(.game-modal, .keyboard) button:hover {
+    background: rgb(211, 168, 221);
+    
+}
+.keyboard button:hover {
+    background: black;
+}
+.game-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.4 ease;
+}
+.game-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.game-modal .content {
+    background: white;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+} 
+.game-modal img {
+    max-width: 130px;
+    margin-bottom: 20px;
+}
+.game-modal h4 {
+    font-size: 1.5rem;
+}
+.game-modal p {
+    font-size: 1.14rem;
+    margin: 15px 0 30px;
+    font-weight: 500;
+}
+.content button:hover {
+    background: black;
+}
+.game-modal p b {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+/*.game-box .button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* הוספת רווח בין כפתור לכפתור */
+  /*  justify-content: center;
+}
+*/.keyboard-container {
+    width: 330px;
+    height: 200px;
+    justify-content: center; /* מרכז את כפתורי המקלדת */
+
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.keyboard-container .keyboard {
+    /* עיצוב המקלדת הווירטואלית: סידור אלמנטים עם מרווח, עטיפה, ויישור למרכז */
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+:where(.game-modal, .keyboard) button {
+    /* עיצוב כפתורים בחלון המודאלי והמקלדת: צבע טקסט, גודל גופן, עובי, רקע וצורת עכבר */
+    color: plum;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: brown;
+}
+
+.keyboard button {
+    /* עיצוב כפתורי המקלדת: גודל ורוחב מחושב */
+    padding: 7px;
+    width: calc(100% / 9 - 5px);
+}
+
+.keyboard .action-button {
+    width: calc(40% - 10px); /* התאמת הרוחב כדי שיהיה יותר גדול */
+    background-color: rgb(108, 102, 102); /* צבע רקע כהה לכפתור */
+    color: rgb(0, 0, 0); /* צבע טקסט לבן */
+}
+
+@media (max-width : 782px) {
+    .container {
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+    .hangman-box img {
+        max-width: 200px;
+    }
+    .hangman-box h1 {
+        display: none;
+    }
+}
