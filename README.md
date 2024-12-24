@@ -1,7 +1,7 @@
-# Hangman Game
+# Wordle Game
 
 ## Description
-A classic "Hangman" game where players try to guess a hidden word by suggesting letters.
+A daily word puzzle game where players try to guess a secret five-letter word within six attempts. Each guess provides feedback by highlighting letters with different colors to indicate correctness and position.
 
 ## Technologies
 - HTML
@@ -9,18 +9,20 @@ A classic "Hangman" game where players try to guess a hidden word by suggesting 
 - JavaScript
 
 ## Key Features
-- Real-time feedback for each guessed letter.
-- Responsive design ensuring compatibility across devices (desktop and mobile).
-- User-friendly interface with intuitive gameplay mechanics.
+- Logic to evaluate user guesses and provide feedback through color-coded highlights.
+- Dynamic UI that enhances the player’s experience.
+- Built-in word validation to ensure valid guesses.
+- Responsive design that works seamlessly on both desktop and mobile devices.
 
 ## Purpose
-This project was created to strengthen my Frontend development skills, particularly in JavaScript, while building an engaging and interactive game.
+This project was created to practice implementing game logic and improve JavaScript skills, focusing on interactivity and user feedback.
 
 ## Potential Uses
-- Educational purposes for learning basic programming concepts.
-- Inspiration for similar projects.
-- Demonstration of my coding abilities.
+- Educational purposes to demonstrate JavaScript-based game development.
+- A fun and challenging game for players to enjoy.
+- Showcase of my problem-solving and frontend development skills.
 
 ---
 
-Feel free to check out the code and contribute!
+Feel free to try it out or contribute!
+
